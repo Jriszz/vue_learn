@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="../new_html/statics/base.css">
+	<link rel="stylesheet" href="../new_html/statics/index.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="nav">
+			<ul class="nav nav-pills">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="#">Active</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Link</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Link</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+			  </li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div class="container content_container_01">
+			<div class="content_container_02">
+				<table class="table table-dark">
+		  <thead>
+		    <tr>
+		      <th scope="col">序号</th>
+		      <th scope="col">First</th>
+		      <th scope="col">Last</th>
+		      <th scope="col">Handle</th>
+		      <th scope="col">Watch</th>
+		    </tr>
+		  </thead>
+		  <tbody class="tbody">
+		  </tbody>
+				</table>
+			</div>
+		</div>
+	<div class="without_content">
+		<button type="button" class="btn btn-primary">Primary</button>
+	</div>
+	</div>
+		<div class="footer">
+			<nav aria-label="Page navigation example">
+		  		<ul class="pagination">
+		  		</ul>
+			</nav>
+		</div>
+</body>
+<script>
+	window.onload = function (){
+		var myarr = [[1,'Mark','Ott1','www','watch'],[2,'Louis','Ott2','www','watch'],[3,'James','Ott3','www','watch'],[4,'Roosevelt','Ott4','www','watch'],[5,'Mitchell','Ott5','www','watch'],[6,'Mark','Otto','www'],[7,'Mark','Otto','www'],[8,'Mark','Otto','www'],[9,'Mark','Otto','www'],[10,'Mark','Otto','www'],[11,'Mark','Otto','www'],[12,'Mark','Otto','www'],[13,'Mark','Otto','www'],[14,'Mark','Otto','www'],[15,'Mark','Otto','www'],[16,'Mark','Otto','www'],[17,'Mark','Otto','www']]
+		var btn_ele = document.querySelector('.btn')
+		var tbody_ele = document.querySelector('.table .tbody')
+		var footer_ele = document.querySelector('.pagination')
+		var display_item = 4
+		var myarr_len = myarr.length
+		var pages = Math.ceil(myarr_len/display_item)
+		var start = 0
+		var end= display_item
+
+		var pre_btn = '<li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a> </li>'
+		var pages_btn = ''
+		for (var i=0;i< pages;i++){
+			pages_btn = pages_btn + '<li class="page-item"><a class="page-link" href="#">'.replace("#",
+				"#_"+Number(i+1)) + Number(i+1) +'</a>' 			
+
+		}
+		var nex_btn = '<li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a> </li>'
+		pagination = ''.concat(pre_btn,pages_btn,nex_btn)
+		footer_ele.innerHTML = pagination
+		var current_index = 0
+		var content_eles = document.querySelectorAll('.page-link')
+		function load_html(start_index,end_index){
+			for(var i=start; i<end; i++){
+				for(var j=0; j<myarr[i].length;j++){
+					if(j == 0){
+						tempstr = '<tr><th scope="row">'+ myarr[i][j] +'</th>'
+					}
+					else if(j == myarr[i].length-1){
+						tempstr = tempstr +'<td><a class="td_watch"  title="#">'.replace("#",
+				"#_"+Number(i+1))+ myarr[i][j] + '</a></td>'
+					}
+					else{
+					tempstr = tempstr + '<td>'+ myarr[i][j] + '</td>'	
+					}
+				}
+				tempstr = tempstr + '</td></tr>'
+				tbody_ele.innerHTML = tbody_ele.innerHTML + tempstr
+				}
+				return tbody_ele.innerHTML
+			};
+		load_html(start,end)
+		for (var i=1; i<content_eles.length-1;i++){			
+			content_eles[i].index = i
+			content_eles[i].addEventListener('click',function(){
+				start = (this.index-1) * display_item
+				//alert(start)
+				current_index = this.index
+				tmp = start + display_item
+				if (tmp >= myarr_len){
+					end = myarr_len
+				}
+				else{
+					end = tmp
+				}
+				tbody_ele.innerHTML = ''
+				load_html(start,end)
+			})
+		}
+
+		content_eles[0].addEventListener('click',function(){
+			if (current_index > 1){
+				start = (current_index-2) * display_item
+				current_index -= 1
+			}
+			else{
+				start = 0
+			}
+			tmp = start + display_item
+			if (tmp >= myarr_len){
+				end = myarr_len
+			}
+			else{
+				end = tmp
+			}
+			tbody_ele.innerHTML = ''
+			var res = load_html(start,end)
+		});
+
+		content_eles[content_eles.length-1].addEventListener('click',function(){
+			if (current_index < content_eles.length-2){
+				start = (current_index) * display_item
+				current_index += 1
+			}
+			else{
+				start = (current_index-1) * display_item
+			}
+			tmp = start + display_item
+			if (tmp >= myarr_len){
+				end = myarr_len
+			}
+			else{
+				end = tmp
+			}
+			tbody_ele.innerHTML = ''
+			var res = load_html(start,end)
+		});
+
+	}
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="txt/html; charset=utf-8" /> 
+		<title></title>
+	</head>
+	<style type="text/css">
+		.demo{
+		  	display: flex;
+			flex-direction: column;            
+		}
+		.demo div{
+		 	flex: 1;
+		}
+		.body{
+		 	display: flex;
+		} 
+		.header, .footer{
+			background: grey;
+			line-height: 80px;
+			text-align: center;
+		}
+		.left, .right{
+			background: pink;
+			line-height: 200px;
+			text-align: center;
+		}
+		.header,.footer,.left,.right{
+		 	flex: 0 0 20%!important;
+		}
+	</style>
+	<body>
+		<div class="demo">
+	   		<div class="header">头部</div>
+	   		<div class="body">
+	     		<div class="left">left</div>
+	     		<div class="center">center</div>
+	     	<div class="right">right</div>
+	  		</div>
+	  	<div class="footer">底部</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+a {
+	text-decoration: none;
+	out-line: none;
+}
+
+
+.header .nav{
+
+	margin-bottom: 20px;
+	border-bottom: 1px solid #fefefe;
+}
+.content .without_content {
+	text-align: center;
+}
+
+.footer{
+	float: right;
+}
+.content_container_01{
+	border:1px solid rgba(240,240,247,1);
+}
+.content_container_02{
+	padding: 20px;
+}
+.td_watch{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
