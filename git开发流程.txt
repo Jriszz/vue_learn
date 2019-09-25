@@ -22,7 +22,7 @@ fourth_step:
 	git commit
 fifth_step:
 5.远程仓库提交
-	git pull origin develop //先拉取develop中的代码，因为有可能别人已经往上提交过代码了
+	git pull origin(仓库名) develop //先拉取develop中的代码，因为有可能别人已经往上提交过代码了
 	git checkout  develop//切到develop分支
 	git merge <feature/**>//合并feature/**中的代码到develop中
 	git push //提交到develop远程分支上
