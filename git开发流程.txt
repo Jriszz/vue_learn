@@ -1,0 +1,29 @@
+first_step:
+1.git init //初始化本地git仓库
+second_step:
+2.git remote set-url origin //设置远端仓库地址（（查看配置 git config --list，查看远端地址 git remote –v）git fetch add origin_new(设置新的仓库地址)，（设置用户名 git config -global user.name,））
+thrid_step:
+
+3.git checkout -b dev(本地分支名称) origin/dev(远程分支名称)（创建本地分支并切换）
+(git remote show seconds(远程仓库名，查看远程仓库分支))
+	branch:
+	1.无仓库，无分支，本地创建分支（dev),将分支推送远程仓库
+		git branch develop
+		git push -u origin develop
+	2.有分支，拉取开发分支
+		git fetch origin
+		git remote update origin --prune
+		git checkout -b <本地分支名 feature/***> <origin/develop>
+
+fourth_step:
+4.本地开发，提交本地仓库
+	git status
+	git add
+	git commit
+fifth_step:
+5.远程仓库提交
+	git pull origin develop //先拉取develop中的代码，因为有可能别人已经往上提交过代码了
+	git checkout  develop//切到develop分支
+	git merge <feature/**>//合并feature/**中的代码到develop中
+	git push //提交到develop远程分支上
+	git branch -d feature/** //删除本地的分支
