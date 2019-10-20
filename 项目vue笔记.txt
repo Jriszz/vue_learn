@@ -1,0 +1,23 @@
+﻿/*2019/10/20,第一天*/
+重写商城项目，布局，使用vant框架
+	1.引用布局，按需引入Row,Col
+	2.<style lang="scss" scoped> scoped限制style作用域
+	3.scss语法 .attr{
+
+	}
+	4.不使用惰性版本安装
+		npm config set save-exact=true
+		验证是否设置成功
+		npm config ls
+		初始化webpack的package.json文件
+		降版本,指定版本
+		cnpm install sass-loader@7.3.1
+	5.vue-router传值两种方式
+		5.1
+		set: /main/:param?
+		exam:http://localhost:8080/#/main?id=2&name=34
+		get: this.$route.query.param
+		5.2
+		set: /main/:id
+		exam:http://localhost:8080/#/main/1
+		get: this.$route.params.id
