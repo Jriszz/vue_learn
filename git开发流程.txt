@@ -1,29 +1,31 @@
 first_step:
-1.git init //³õÊ¼»¯±¾µØgit²Ö¿â
+1.git init //åˆå§‹åŒ–æœ¬åœ°gitä»“åº“
 second_step:
-2.git remote set-url origin //ÉèÖÃÔ¶¶Ë²Ö¿âµØÖ·£¨£¨²é¿´ÅäÖÃ git config --list£¬²é¿´Ô¶¶ËµØÖ· git remote ¨Cv£©git fetch add origin_new(ÉèÖÃĞÂµÄ²Ö¿âµØÖ·)£¬£¨ÉèÖÃÓÃ»§Ãû git config -global user.name,£©£©
+1.1git remote add origin //æ–°åŠ å…¥è¿œç«¯ä»“åº“åœ°å€
+2.git remote set-url origin //ä¿®æ”¹è¿œç«¯ä»“åº“åœ°å€ï¼ˆï¼ˆæŸ¥çœ‹é…ç½® git config --listï¼ŒæŸ¥çœ‹è¿œç«¯åœ°å€ git remote â€“vï¼‰
+git fetch add origin_new(è®¾ç½®æ–°çš„ä»“åº“åœ°å€)ï¼Œï¼ˆè®¾ç½®ç”¨æˆ·å git config -global user.name,ï¼‰ï¼‰
 thrid_step:
 
-3.git checkout -b dev(±¾µØ·ÖÖ§Ãû³Æ) origin/dev(Ô¶³Ì·ÖÖ§Ãû³Æ)£¨´´½¨±¾µØ·ÖÖ§²¢ÇĞ»»£©
-(git remote show seconds(Ô¶³Ì²Ö¿âÃû£¬²é¿´Ô¶³Ì²Ö¿â·ÖÖ§))
+3.git checkout -b dev(æœ¬åœ°åˆ†æ”¯åç§°) origin/dev(è¿œç¨‹åˆ†æ”¯åç§°)ï¼ˆåˆ›å»ºæœ¬åœ°åˆ†æ”¯å¹¶åˆ‡æ¢ï¼‰
+(git remote show seconds(è¿œç¨‹ä»“åº“åï¼ŒæŸ¥çœ‹è¿œç¨‹ä»“åº“åˆ†æ”¯))
 	branch:
-	1.ÎŞ²Ö¿â£¬ÎŞ·ÖÖ§£¬±¾µØ´´½¨·ÖÖ§£¨dev),½«·ÖÖ§ÍÆËÍÔ¶³Ì²Ö¿â
+	1.æ— ä»“åº“ï¼Œæ— åˆ†æ”¯ï¼Œæœ¬åœ°åˆ›å»ºåˆ†æ”¯ï¼ˆdev),å°†åˆ†æ”¯æ¨é€è¿œç¨‹ä»“åº“
 		git branch develop
 		git push -u origin develop
-	2.ÓĞ·ÖÖ§£¬À­È¡¿ª·¢·ÖÖ§
+	2.æœ‰åˆ†æ”¯ï¼Œæ‹‰å–å¼€å‘åˆ†æ”¯
 		git fetch origin
 		git remote update origin --prune
-		git checkout -b <±¾µØ·ÖÖ§Ãû feature/***> <origin/develop>
+		git checkout -b <æœ¬åœ°åˆ†æ”¯å feature/***> <origin/develop>
 
 fourth_step:
-4.±¾µØ¿ª·¢£¬Ìá½»±¾µØ²Ö¿â
+4.æœ¬åœ°å¼€å‘ï¼Œæäº¤æœ¬åœ°ä»“åº“
 	git status
 	git add
 	git commit
 fifth_step:
-5.Ô¶³Ì²Ö¿âÌá½»
-	git pull origin(²Ö¿âÃû) develop //ÏÈÀ­È¡developÖĞµÄ´úÂë£¬ÒòÎªÓĞ¿ÉÄÜ±ğÈËÒÑ¾­ÍùÉÏÌá½»¹ı´úÂëÁË
-	git checkout  develop//ÇĞµ½develop·ÖÖ§
-	git merge <feature/**>//ºÏ²¢feature/**ÖĞµÄ´úÂëµ½developÖĞ
-	git push //Ìá½»µ½developÔ¶³Ì·ÖÖ§ÉÏ
-	git branch -d feature/** //É¾³ı±¾µØµÄ·ÖÖ§
+5.è¿œç¨‹ä»“åº“æäº¤
+	git pull origin(ä»“åº“å) develop //å…ˆæ‹‰å–developä¸­çš„ä»£ç ï¼Œå› ä¸ºæœ‰å¯èƒ½åˆ«äººå·²ç»å¾€ä¸Šæäº¤è¿‡ä»£ç äº†
+	git checkout  develop//åˆ‡åˆ°developåˆ†æ”¯
+	git merge <feature/**>//åˆå¹¶feature/**ä¸­çš„ä»£ç åˆ°developä¸­
+	git push //æäº¤åˆ°developè¿œç¨‹åˆ†æ”¯ä¸Š
+	git branch -d feature/** //åˆ é™¤æœ¬åœ°çš„åˆ†æ”¯
