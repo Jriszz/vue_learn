@@ -1,8 +1,9 @@
 first_step:
 1.git init //初始化本地git仓库
 second_step:
-1.1git remote add origin //新加入远端仓库地址
-2.git remote set-url origin //修改远端仓库地址（（查看配置 git config --list，查看远端地址 git remote –v）
+1.1 git remote add origin //新加入远端仓库地址
+2.
+git remote set-url origin //修改远端仓库地址（（查看配置 git config --list，查看远端地址 git remote –v）
 git fetch add origin_new(设置新的仓库地址)，（设置用户名 git config -global user.name,））
 thrid_step:
 
