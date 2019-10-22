@@ -1,0 +1,2 @@
+2019/10/22
+select * from (select t.*, rownum rw from T_SYS_APP_CONFIG t) where rw between '30' and '40' //oracle进行分页取值
