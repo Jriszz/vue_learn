@@ -1,0 +1,7 @@
+/bin/usr/python
+
+def login(username,password):
+	if username in users:
+		if password == users[username]:
+			return true
+	return false
