@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>hoverSlideout Demo</title>
+    <style type="text/css"> 
+    .container {
+        text-align: center;
+    }
+
+    .bar {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        transition: 1s all cubic-bezier(.46, 1, .23, 1.52);
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        background-color: #ef5621;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .bar.active {
+        height: 200px;
+    } </style>
+</head>
+
+<body>
+<h3>css3 transition 实现div宽度以中心为原点向两边伸长</h3>
+<div class="container">
+    <div class="bar"></div>
+</div>
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"> $('.bar').hover(function () {
+    $('.bar').toggleClass('active');
+}); </script>
+</body>
+</html>

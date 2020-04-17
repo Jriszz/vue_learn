@@ -1,0 +1,234 @@
+
+.header .navbar-default .navbar-nav>.active>a{
+    background:#269abc !important;
+}
+.content{
+	background: #eceef0;
+	height: 850px;
+	margin-top:-20px;
+}
+.content_header{
+	width: 100%;
+	height: 100px;
+	padding-left: 20% !important;
+	padding-top:20px !important;
+	margin-left:740px !important;
+	/*display:flex;*/
+	/*flex-flow:row wrap;*/
+	/*border:1px solid #000;*/
+	}
+.content_header .dropdown{
+	float: left;
+}
+.content_header .choice2{
+	margin-left: 20px;
+
+}
+.content_header button,li{
+    color: #5e5e5e !important;
+
+}
+.content_header .input_number{
+	left: 20px;
+}
+.content_header .input_number .test_number{
+	width: 200px;
+}
+.content .data{
+	width: 1870px;
+	height: 720px;
+	margin-top: 1px;
+	margin-left: 20px;
+	background: #fff;
+	border:1px solid #fff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow:0px 0px 8px 5px #ccc;
+	
+}
+
+.content .data thead{
+
+	/*border:1px solid white;*/
+	/*border-top-left-radius: 10px;
+	border-top-right-radius: 10px; */
+	background: #eceef0;
+	
+}
+.content .data thead tr{
+	height: 60px;
+	
+	
+}
+
+.content .data thead tr th{
+	font-size:15px;
+	font-family:SimHei;
+	color:#687c8a;
+
+}
+
+.content .data .theader :first-child{
+	border-top-left-radius: 10px;
+}
+.content .data .theader :last-child{
+	border-top-right-radius: 10px;
+}
+.content .data .pagenation{
+	/*position: fixed;*/
+	bottom: 50px;
+	height: 30px;
+	width: 1870px;
+	border-top:1px dashed #eceef0;
+	margin-top: 550px;
+}
+.content .data .pagenation .child_pagenation{
+	margin-left: 1500px;
+}
+#name_orders,#names_module{
+	max-height: 200px;
+	/*overflow-y: scroll;*/
+	overflow:auto;
+}
+#dropdownMenu1,#dropdownMenu2{
+	width: 140px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#name_orders .order_menu,#names_module .module_menu{
+	border-bottom: 1px dashed #ccc;
+}
+
+#case-parameter{
+	height: 500px;
+	overflow:auto;
+}
+
+#TestCaseModal .modal-content{
+	width: 1000px;
+}
+
+#TestCaseModal .modal-header{
+	background-image: linear-gradient(90deg,#009dcc,#00effb);
+	color:#fff;
+	height: 45px;
+}
+
+#TestCaseModal .modal-header .modal_close_btn{
+	float: left;
+}
+
+#TestCaseModal .modal-header .modal_close_btn{
+	background-image: url("../static/images/cross-bold-black.png");
+	background-size:cover;
+	width: 20px;
+	height: 20px;
+	margin-left: 855px;
+}
+#TestCaseModal .modal-title{
+	float: left;
+}
+
+#TestCaseModal .module-orders-btn {
+	padding-top:10px;
+	padding-left: 20px;	
+	/*border:1px solid #000;*/
+	height: 50px;
+}
+#TestCaseModal  .module-btn,.orders-btn{
+	float: left;
+}
+
+
+#TestCaseModal .orders-btn{
+	margin-left: 30px;
+}
+
+#TestCaseModal .module-btn button{
+	border:0px;
+}
+
+#TestCaseModal .orders-btn button{
+	border:0px;
+}
+#modal-module-ul {
+	max-height: 200px;
+} 
+#modal-order-ul {
+	max-height: 200px;
+	overflow: auto;
+}
+
+/**/
+#modal-main {
+	min-height: 100px;
+	max-height: 600px;
+	overflow: auto;
+	padding: 20px;
+}
+
+#modal-main::-webkit-scrollbar{
+    display:none;
+}
+
+#modal-main::-moz-scrollbar{
+    display:none;
+}
+#modal-main .modal-main-content{
+	height:480px; 
+	width:900px; 
+	animation: myfirst 3s;
+	padding-top:50px;
+	padding-left: 70px;
+	/*align-self:center;*/
+	/*vertical-align: middle;*/
+
+}
+.modal-main-content .author-input-group, .comment-input-group{
+	margin-top: 50px;
+	animation: mysecond 4s;
+}
+.modal-main-content .author-input-group{
+	position: absolute;
+}
+
+.modal-main-content .tescase-input{
+	/*margin-left: 5px;*/
+	width: 640px !important;
+}
+.modal-main-content .comment-input{
+	width: 540px !important;
+}
+.modal-main-content .author-input{
+	
+	width: 340px !important;
+}
+
+
+
+@keyframes myfirst
+{
+from {height:0;padding-top: 0px}
+to {height:480px; padding-top: 50px;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {height:0;padding-top: 0px}
+to {height:480px; padding-top: 50px;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {height:0;padding-top: 0px}
+to {height:480px; padding-top: 50px;}
+}
+
+@keyframes mysecond
+{
+from {margin-top: 0px}
+to {margin-top: 50px;}
+}

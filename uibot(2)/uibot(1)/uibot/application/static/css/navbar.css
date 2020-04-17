@@ -1,0 +1,15 @@
+/*.header .navbar{
+	background: #2f2c2c94;
+}
+*/
+/*.header{
+	padding: 0px;
+}*/
+.header .navbar{
+	background: white;
+}
+.navbar-nav>.active>a{
+	font-family: STSong;
+	font-size:15px;
+
+}
